@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/layout'
-import Home from './components/pages/Home'
-import CheckoutPage from './components/pages/CheckoutPage'
-import CheckoutSuccessPage from './components/pages/CheckoutSuccessPage'
-import ProductPage from './components/pages/ProductPage'
+import Home from './pages/Home'
+import CheckoutPage from './pages/CheckoutPage'
+import CheckoutSuccessPage from './pages/CheckoutSuccessPage'
+import ProductPage from './pages/ProductPage'
 
 
 

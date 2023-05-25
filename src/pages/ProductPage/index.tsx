@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import setPrice from '../../../features/price/setPrice'
+import setPrice from '../../features/price/setPrice'
 
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'

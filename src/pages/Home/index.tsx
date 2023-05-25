@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import usePrice from '../../../features/price/setPrice'
-import setPrice from '../../../features/price/setPrice'
+import usePrice from '../../features/price/setPrice'
+import setPrice from '../../features/price/setPrice'
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'
 
