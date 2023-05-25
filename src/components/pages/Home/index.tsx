@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import usePrice from '../../../features/price/setPrice'
+import setPrice from '../../../features/price/setPrice'
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'
 
@@ -35,13 +37,14 @@ function Home() {
               title: string
               description: string
               price: number
+              discountedPrice: number
               rating: number
               imageUrl: string
             }) => (
               <div key={post.id}>
                 <h2>{post.title}</h2>
                 <p>{post.description}</p>
-                <p>{post.price}</p>
+                {setPrice(post)}
                 <p>rating: {post.rating}</p>
                 <img src={post.imageUrl} alt={post.title} />
                 <Link to={`/product/${post.id}`}>
