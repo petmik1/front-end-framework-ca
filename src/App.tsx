@@ -4,12 +4,13 @@ import Home from './pages/Home'
 import CheckoutPage from './pages/CheckoutPage'
 import CheckoutSuccessPage from './pages/CheckoutSuccessPage'
 import ProductPage from './pages/ProductPage'
+import { ShoppingCartProvider } from './context/ShoppingCartContext'
 
 
 
 function App() {
   return (
-    <div>
+    <ShoppingCartProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route  index element={<Home />}/>
@@ -21,7 +22,7 @@ function App() {
           <Route path="product/:id" element={<ProductPage/>} />
         </Route>
       </Routes>
-    </div>
+    </ShoppingCartProvider>
   )
 }
 

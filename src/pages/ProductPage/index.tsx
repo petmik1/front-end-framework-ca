@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import setPrice from '../../features/price/setPrice'
+import { useShoppingCart } from '../../context/ShoppingCartContext'
 
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'
@@ -8,6 +9,7 @@ const url = 'https://api.noroff.dev/api/v1/online-shop'
 function ProductPage() {
   const { id } = useParams()
   const [product, setProduct] = useState<any>([])
+  const { increaseQuantity } = useShoppingCart()
 
   useEffect(() => {
     async function getData() {
@@ -18,9 +20,9 @@ function ProductPage() {
     getData()
   }, [])
 
-  function addToCart() {
-    console.log('add to cart')
-  }
+  // function addToCart() {
+
+  // }
 
   function renderReviews() {
     if (product.reviews !== 0) {
@@ -54,7 +56,7 @@ function ProductPage() {
       <img src={product.imageUrl} alt={product.title} />
       <div>{renderReviews()}</div>
       {setPrice(product)}
-      <button onClick={addToCart}>add to cart</button>
+      <button onClick={() => increaseQuantity(product.id)}>add to cart</button>
     </div>
   )
 }
