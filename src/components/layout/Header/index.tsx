@@ -12,7 +12,7 @@ function Header() {
             <Link to="/">home</Link>
           </li>
           <li>
-            <Link to="product/1">product</Link>
+            <Link to="contact">contact</Link>
           </li>
           <li
             style={{
