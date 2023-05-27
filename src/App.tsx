@@ -5,6 +5,7 @@ import CheckoutPage from './pages/CheckoutPage'
 import CheckoutSuccessPage from './pages/CheckoutSuccessPage'
 import ProductPage from './pages/ProductPage'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
+import ContactPage from './pages/ContactPage'
 
 
 
@@ -19,7 +20,8 @@ function App() {
             path="cart/Checkout-Success"
             element={<CheckoutSuccessPage />}
           />
-          <Route path="product/:id" element={<ProductPage/>} />
+          <Route path="product/:id" element={<ProductPage />} />
+          <Route path="contact" element={<ContactPage/>} />
         </Route>
       </Routes>
     </ShoppingCartProvider>
