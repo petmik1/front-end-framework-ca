@@ -6,7 +6,7 @@ import { CartTotal } from '../../components/cart/cartTotal'
 
 function CheckoutPage() {
   const navigate = useNavigate()
-  const { cartItems } = useShoppingCart()
+  const { cartItems, clearCart } = useShoppingCart()
 
 
   return (
@@ -29,7 +29,7 @@ function CheckoutPage() {
       {cartItems.map((item) => (
             <CartTotal id={item.id} quantity={item.quantity} key={item.id}/>
           ))}
-      <button onClick={() => navigate('Checkout-Success')}>Checkout</button>
+      <button onClick={() => {navigate('Checkout-Success'), clearCart()}}>Checkout</button>
     </div>
   )
 }
