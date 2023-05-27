@@ -10,9 +10,7 @@ const url = 'https://api.noroff.dev/api/v1/online-shop'
 
 export function CartItem({ id, quantity }: CartItemProps) {
   const [product, setProduct] = useState<any>([])
-
-  const { increaseQuantity, decreaseQuantity, removeFromCart } =
-    useShoppingCart()
+  const { removeFromCart, increaseQuantity, decreaseQuantity } = useShoppingCart()
 
   useEffect(() => {
     async function getData() {
@@ -23,7 +21,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
     getData()
   }, [])
   return (
-    <tr>
+       <tr>
       <td>
         <p>{product.title}</p>
       </td>

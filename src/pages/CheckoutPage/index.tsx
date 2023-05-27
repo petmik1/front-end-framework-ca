@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import { useShoppingCart } from '../../context/ShoppingCartContext'
 import { CartItem } from '../../components/cart/cartItem'
+import { CartTotal } from '../../components/cart/cartTotal'
 
 
 function CheckoutPage() {
   const navigate = useNavigate()
   const { cartItems } = useShoppingCart()
+
 
   return (
     <div>
@@ -20,11 +22,13 @@ function CheckoutPage() {
         </thead>
         <tbody>
           {cartItems.map((item) => (
-            <CartItem id={item.id} quantity={item.quantity} key={item.id}/>
+            <CartItem id={item.id} quantity={item.quantity}  key={item.id}/>
           ))}
         </tbody>
       </table>
-      <h2>Total: {CalculateTotal()}</h2>
+      {cartItems.map((item) => (
+            <CartTotal id={item.id} quantity={item.quantity} key={item.id}/>
+          ))}
       <button onClick={() => navigate('Checkout-Success')}>Checkout</button>
     </div>
   )
