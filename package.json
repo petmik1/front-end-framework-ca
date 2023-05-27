@@ -14,6 +14,7 @@
     "@fortawesome/sharp-light-svg-icons": "^6.4.0",
     "@fortawesome/sharp-regular-svg-icons": "^6.4.0",
     "@fortawesome/sharp-solid-svg-icons": "^6.4.0",
+    "@hookform/resolvers": "^3.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -28,7 +29,8 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
