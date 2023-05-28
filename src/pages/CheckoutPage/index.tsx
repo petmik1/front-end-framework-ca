@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useShoppingCart } from '../../context/ShoppingCartContext'
 import { CartItem } from '../../components/cart/cartItem'
 import { CartTotal } from '../../components/cart/cartTotal'
+import * as S from './index.styled'
 
 
 function CheckoutPage() {
@@ -11,7 +12,7 @@ function CheckoutPage() {
 
 
   return (
-    <div>
+    <S.CheckoutContainer>
       <h1>Cart</h1>
       <table>
         <thead>
@@ -31,7 +32,7 @@ function CheckoutPage() {
             <CartTotal id={item.id} quantity={item.quantity} key={item.id}/>
           ))}
       <button onClick={() => {navigate('Checkout-Success'), clearCart()}}>Checkout</button>
-    </div>
+    </S.CheckoutContainer>
   )
 }
 
