@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
     width: 90%;
+    height: 100vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -16,10 +17,11 @@ export const HomeContainer = styled.div`
         outline: none;
     }
     & > .posts {
-        
+        @media (min-width: 768px) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
+        }
         & > div {
             display: flex;
             flex-direction: column;
