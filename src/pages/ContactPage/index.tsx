@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import * as S from './index.styles'
 
 type FormValues = {
   fullName: string
@@ -23,7 +24,7 @@ function ContactPage() {
   const test: SubmitHandler<FormValues> = (data) => console.log(data)
 
   return (
-    <form onSubmit={handleSubmit(test)}>
+    <S.ContactForm onSubmit={handleSubmit(test)}>
       <div>
         <label htmlFor="fullName">full Name</label>
         <input {...register('fullName')} />
@@ -45,7 +46,7 @@ function ContactPage() {
         <p>{errors.message?.message}</p>
       </div>
       <input type="submit" />
-    </form>
+    </S.ContactForm>
   )
 }
 
