@@ -1,9 +1,11 @@
+import * as s from './index.styles'
+
 
 function Footer() {
   return (
-    <footer className="footer">
+    <s.FooterContainer className="footer">
       <h2>Footer</h2>
-    </footer>
+    </s.FooterContainer>
   )
 }
 

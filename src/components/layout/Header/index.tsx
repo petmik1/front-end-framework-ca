@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+import * as S from './index.styles'
 
 function Header() {
   return (
-    <header>
+    <S.HeaderContainer>
       <h2>logo</h2>
       <nav>
         <ul>
@@ -36,7 +37,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+    </S.HeaderContainer>
   )
 }
 export default Header

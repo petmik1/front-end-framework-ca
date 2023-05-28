@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import usePrice from '../../features/price/setPrice'
 import setPrice from '../../features/price/setPrice'
+import * as S from './index.styles'
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'
 
@@ -19,7 +19,7 @@ function Home() {
   }, [])
 
   return (
-    <div>
+    <S.HomeContainer>
       <input
         type="text"
         placeholder="search..."
@@ -54,7 +54,7 @@ function Home() {
             )
           )}
       </div>
-    </div>
+    </S.HomeContainer>
   )
 }
 export default Home
