@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import setPrice from '../../features/price/setPrice'
 import { useShoppingCart } from '../../context/ShoppingCartContext'
-
+import * as s from './index.styled'
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'
 
@@ -24,8 +24,8 @@ function ProductPage() {
 
   // }
 
-  function renderReviews() {
-    if (product.reviews !== 0) {
+  function renderReviews() {  
+
       return (
         <div>
           <h3>reviews</h3>
@@ -46,18 +46,22 @@ function ProductPage() {
           </ul>
         </div>
       )
-    }
+           
   }
 
   return (
-    <div>
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
+    <s.ProductPageStyled>
       <img src={product.imageUrl} alt={product.title} />
-      <div>{renderReviews()}</div>
-      {setPrice(product)}
-      <button onClick={() => increaseQuantity(product.id)}>add to cart</button>
-    </div>
+      <div>
+        <h1>{product.title}</h1>
+        <p>{product.description}</p>
+        {setPrice(product)}
+        <button onClick={() => increaseQuantity(product.id)}>
+          add to cart
+        </button>
+        <div>{renderReviews()}</div>
+      </div>
+    </s.ProductPageStyled>
   )
 }
 
