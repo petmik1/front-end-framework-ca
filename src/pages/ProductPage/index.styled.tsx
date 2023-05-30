@@ -4,7 +4,7 @@ export const ProductPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 
   @media (min-width: 768px) {
     flex-direction: row;
