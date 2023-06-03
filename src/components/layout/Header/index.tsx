@@ -3,7 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import * as S from './index.styles'
 
+import { useShoppingCart } from '../../../context/ShoppingCartContext'
+import { useEffect, useState } from 'react'
+import { set } from 'react-hook-form'
+import { number } from 'yup'
+
 function Header() {
+  const { cartItems } = useShoppingCart()
+  let total = 0;
+  cartItems.map((item) => {
+    total = total + item.quantity
+  })
+
+    
+
   return (
     <S.HeaderContainer>
       <h2>logo</h2>
@@ -31,7 +44,7 @@ function Header() {
                   right: '0',
                 }}
               >
-                3
+                {total === 0 ? '' : total}
               </div>
             </Link>
           </li>
