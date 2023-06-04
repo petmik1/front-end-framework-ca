@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react'
 
-type CartTotalProps = {
-  id: string
-  quantity: number
-}
 
 const url = 'https://api.noroff.dev/api/v1/online-shop'
 
-export function CartTotal({ id, quantity }: CartTotalProps) {
+export function CartTotal(id:string, quantity:number, totalMap:Map<string, number>)  {
   const [product, setProduct] = useState<any>([])
-  let price = 0;
+  let total = 0
 
   useEffect(() => {
     async function getData() {
@@ -19,8 +15,9 @@ export function CartTotal({ id, quantity }: CartTotalProps) {
     }
     getData()
   }, [])
-    price = product.discountedPrice * quantity
-  return (
-    <h2>Total: {price}</h2>
-  )
+    const newTotal = product.discountedPrice * quantity
+    totalMap.set(id, newTotal)
+    total = total + newTotal
+  return total
+  
 }
