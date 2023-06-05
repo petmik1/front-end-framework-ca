@@ -1,23 +1,20 @@
 import { useNavigate } from 'react-router-dom'
 import { useShoppingCart } from '../../context/ShoppingCartContext'
 import { CartItem } from '../../components/cart/cartItem'
-import { CartTotal } from '../../components/cart/cartTotal'
 import * as S from './index.styled'
 
 function CheckoutPage() {
   const navigate = useNavigate()
   const { cartItems } = useShoppingCart()
   const { clearCart } = useShoppingCart()
-  const totalMap = new Map()
   let total = 0
 
-  cartItems.map((item) => (
-    CartTotal(item.id, item.quantity, totalMap)  
-  ))
-  
-  totalMap.forEach((value) => {
-    total = total + value
-  })
+  cartItems.map(
+    (item) => (
+      total = total + item.price * item.quantity,
+      total = Math.round(total * 100) / 100
+    )
+  )
 
   return (
     <S.CheckoutContainer>

@@ -20,10 +20,6 @@ function ProductPage() {
     getData()
   }, [])
 
-  // function addToCart() {
-
-  // }
-
   function renderReviews() {  
 
       return (
@@ -56,7 +52,7 @@ function ProductPage() {
         <h1>{product.title}</h1>
         <p>{product.description}</p>
         {setPrice(product)}
-        <button onClick={() => increaseQuantity(product.id)}>
+        <button onClick={() => increaseQuantity(product.id, product.discountedPrice)}>
           add to cart
         </button>
         <div>{renderReviews()}</div>

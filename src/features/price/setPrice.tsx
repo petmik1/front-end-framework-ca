@@ -1,5 +1,5 @@
 function setPrice(product: { price: number; discountedPrice: number }) {
-  if (product.price !== product.discountedPrice) {
+  if (product.price != product.discountedPrice) {
     let finalPrice = product.price - product.discountedPrice
     finalPrice = finalPrice/product.price*100
     finalPrice = Math.round(finalPrice)

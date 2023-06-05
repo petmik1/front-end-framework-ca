@@ -29,7 +29,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
         <p>
           <button onClick={() => decreaseQuantity(product.id)}>-</button>
           {quantity}
-          <button onClick={() => increaseQuantity(product.id)}>+</button>
+          <button onClick={() => increaseQuantity(product.id, product.price)}>+</button>
         </p>
       </td>
       <td>
