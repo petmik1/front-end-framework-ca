@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import setPrice from '../../features/price/setPrice'
 import * as S from './index.styles'
-
-const url = 'https://api.noroff.dev/api/v1/online-shop'
+import { AllProductFetch } from '../../data/AllProductFetch'
+import { useState } from 'react'
 
 function Home() {
-  const [posts, setPosts] = useState<any>([])
   const [query, setQuery] = useState('')
-
-  useEffect(() => {
-    async function getData() {
-      const response = await fetch(url)
-      const json = await response.json()
-      setPosts(json)
-    }
-    getData()
-  }, [])
+  const posts = AllProductFetch()
 
   return (
     <S.HomeContainer>

@@ -1,27 +1,18 @@
-import { useEffect, useState } from 'react'
 import { useShoppingCart } from '../../context/ShoppingCartContext'
+import { SingleProductFetch } from '../../data/SingleProductFetch'
 
 type CartItemProps = {
   id: string
   quantity: number
 }
 
-const url = 'https://api.noroff.dev/api/v1/online-shop'
-
 export function CartItem({ id, quantity }: CartItemProps) {
-  const [product, setProduct] = useState<any>([])
-  const { removeFromCart, increaseQuantity, decreaseQuantity } = useShoppingCart()
+  const { removeFromCart, increaseQuantity, decreaseQuantity } =
+    useShoppingCart()
+  const product = SingleProductFetch(id)
 
-  useEffect(() => {
-    async function getData() {
-      const response = await fetch(url + '/' + id)
-      const json = await response.json()
-      setProduct(json)
-    }
-    getData()
-  }, [])
   return (
-       <tr>
+    <tr>
       <td>
         <p>{product.title}</p>
       </td>
@@ -29,7 +20,9 @@ export function CartItem({ id, quantity }: CartItemProps) {
         <p>
           <button onClick={() => decreaseQuantity(product.id)}>-</button>
           {quantity}
-          <button onClick={() => increaseQuantity(product.id, product.price)}>+</button>
+          <button onClick={() => increaseQuantity(product.id, product.price)}>
+            +
+          </button>
         </p>
       </td>
       <td>
