@@ -1,4 +1,3 @@
-import { clear } from 'console'
 import { useContext, createContext, useState } from 'react'
 import { CartItem } from '../components/cart/cartItem'
 
