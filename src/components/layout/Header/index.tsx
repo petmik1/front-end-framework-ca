@@ -4,9 +4,6 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- im
 import * as S from './index.styles'
 
 import { useShoppingCart } from '../../../context/ShoppingCartContext'
-import { useEffect, useState } from 'react'
-import { set } from 'react-hook-form'
-import { number } from 'yup'
 
 function Header() {
   const { cartItems } = useShoppingCart()
@@ -14,8 +11,6 @@ function Header() {
   cartItems.map((item) => {
     total = total + item.quantity
   })
-
-    
 
   return (
     <S.HeaderContainer>
