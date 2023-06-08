@@ -1,15 +1,16 @@
 import Footer from "./Footer"
 import Header from "./Header"
 import { Outlet } from 'react-router-dom';
+import * as S from './index.styles'
 
 
 function Layout() {
   return (
-    <div className="layout">
+    <S.LayoutContainer className="layout">
       <Header/>
       <Outlet/>
       <Footer/>
-    </div>
+    </S.LayoutContainer>
   )
 }
 export default Layout

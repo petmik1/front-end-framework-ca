@@ -4,7 +4,7 @@ export const ProductPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -12,7 +12,7 @@ export const ProductPageStyled = styled.div`
     padding: 0 20%;
     margin: 0 auto;
   }
-  background-color: #f5f5f5;
+
   & > div > button {
     display: flex;
     margin: 0 auto;
