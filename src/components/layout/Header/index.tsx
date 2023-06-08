@@ -1,21 +1,15 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import * as S from './index.styles'
-
 import { useShoppingCart } from '../../../context/ShoppingCartContext'
-import { useEffect, useState } from 'react'
-import { set } from 'react-hook-form'
-import { number } from 'yup'
+import { faCartShopping } from '@fortawesome/pro-solid-svg-icons'
 
 function Header() {
   const { cartItems } = useShoppingCart()
-  let total = 0;
+  let total = 0
   cartItems.map((item) => {
     total = total + item.quantity
   })
-
-    
 
   return (
     <S.HeaderContainer>
@@ -36,7 +30,7 @@ function Header() {
             }}
           >
             <Link to="cart">
-              <FontAwesomeIcon icon={solid('cart-shopping')} />
+              <FontAwesomeIcon icon={faCartShopping} />
               <div
                 style={{
                   position: 'absolute',

@@ -5,6 +5,7 @@ import * as s from './index.styled'
 import { SingleProductFetch } from '../../data/SingleProductFetch'
 
 function ProductPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { id } = useParams() as any
   const { increaseQuantity } = useShoppingCart()
   const product = SingleProductFetch(id)
