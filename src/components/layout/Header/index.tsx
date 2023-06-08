@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import * as S from './index.styles'
-
 import { useShoppingCart } from '../../../context/ShoppingCartContext'
 import { faCartShopping } from '@fortawesome/pro-solid-svg-icons'
 
